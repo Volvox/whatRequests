@@ -17,10 +17,9 @@ class RequestSpider(BaseSpider):
     ]
   
     def parse(self, response):
-        # name = raw_input("username > ")
-        # passw = raw_input("password > ")
-        name = "aureus"
-        passw = "password"
+         name = raw_input("username > ")
+         passw = raw_input("password > ")
+       
         return [FormRequest.from_response(response,
                     formdata={'username': name, 'password': passw},
                     callback=self.after_login)]
