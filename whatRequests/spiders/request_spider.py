@@ -17,10 +17,8 @@ class RequestSpider(BaseSpider):
     ]
   
     def parse(self, response):
-        # name = raw_input("username > ")
-        # passw = raw_input("password > ")
-        name = "aureus"
-        passw = "password"
+        name = raw_input("username > ")
+        passw = raw_input("password > ")
         return [FormRequest.from_response(response,
                     formdata={'username': name, 'password': passw},
                     callback=self.after_login)]
@@ -37,7 +35,6 @@ class RequestSpider(BaseSpider):
     
     def parse_requests(self, response):
         x = HtmlXPathSelector(response)
-        print("debug")
         next_link = ("http://what.cd/" + x.select("//div[@class='linkbox']/a[@class='pager_next']/@href").extract()[0])
         print(next_link)
 
