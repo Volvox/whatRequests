@@ -1,1 +1,1 @@
-Using the scrapy library, this is a [under construction] recursive web crawler that scrapes request titles on what.cd and CD titles at my school library to check for matches. The scraped data is stored in MongoDB.
+Using the scrapy library, this is a recursive web crawler that scrapes request titles on what.cd and CD titles at my school library to check for matches. The scraped data is stored in MongoDB.
