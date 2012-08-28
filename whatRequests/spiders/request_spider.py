@@ -36,7 +36,7 @@ class RequestSpider(BaseSpider):
     def parse_requests(self, response):
         x = HtmlXPathSelector(response)
         next_link = ("http://what.cd/" + x.select("//div[@class='linkbox']/a[@class='pager_next']/@href").extract()[0])
-        print(next_link)
+        print(next_link+"LINK_NEXT")
 
         if not not next_link:
 

@@ -17,13 +17,13 @@ class LibraryQuery(BaseSpider):
 
     def parse(self, response):
         x = HtmlXPathSelector(response)
-        next_link = (x.select("//div[@class='pagination']/div/a[@class='next']/@href").extract()[0])
-        print(next_link + "newgin")
+        next_link = (x.select("//a[@class='next']/@href").extract()[0])
 
-        if not not next_link:
+        if next_link:
 
             #crawl pages recursively to scan through all of the requests
-            yield Request(next_link, self.parse)
+            yield Request(url=next_link, callback=self.parse, dont_filter = True)
+    
         
         albums = x.select("//h2[@class='title']/a/text()").extract()
         items = []
