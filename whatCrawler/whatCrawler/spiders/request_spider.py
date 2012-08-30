@@ -2,9 +2,7 @@ from scrapy.spider import BaseSpider
 from scrapy.http import FormRequest
 from scrapy.http import Request
 from scrapy.selector import HtmlXPathSelector
-from whatRequests.items import WhatItem
-from scrapy.contrib.spiders import CrawlSpider, Rule
-from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
+from whatCrawler.items import WhatItem
 from scrapy.utils.response import get_base_url 
 import re
 
@@ -36,7 +34,6 @@ class RequestSpider(BaseSpider):
     def parse_requests(self, response):
         x = HtmlXPathSelector(response)
         next_link = ("http://what.cd/" + x.select("//div[@class='linkbox']/a[@class='pager_next']/@href").extract()[0])
-        print(next_link+"LINK_NEXT")
 
         if not not next_link:
 
@@ -63,6 +60,7 @@ class RequestSpider(BaseSpider):
             #store all of the links that are titles and were not released in 2012
             if date != None and d2012 == None:
                 item['name'] = re.sub('\[[^\]]*\]','',album) #get rid of [date]
+                item['name'] = item['name'].strip()
                 items.append(item)
            
         
