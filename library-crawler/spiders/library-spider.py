@@ -1,7 +1,7 @@
 from scrapy.spider import BaseSpider
 from scrapy.http import Request
 from scrapy.selector import HtmlXPathSelector
-from whatRequests.items import WhatItem
+from library-crawler.items import WhatItem
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.utils.response import get_base_url 
