@@ -11,10 +11,10 @@ MONGODB_PORT = 27017
 MONGODB_DB = "whatRequests"
 MONGODB_COLLECTION = "requests"
 
-BOT_NAME = 'whatCrawler'
+BOT_NAME = 'what.cd'
 BOT_VERSION = '1.0'
 
-SPIDER_MODULES = ['whatCrawler.spiders']
-NEWSPIDER_MODULE = 'whatCrawler.spiders'
+SPIDER_MODULES = ['what-crawler.spiders']
+NEWSPIDER_MODULE = 'what-crawler.spiders'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
 
