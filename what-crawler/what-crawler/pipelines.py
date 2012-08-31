@@ -3,9 +3,6 @@
 #     def process_item(self, item, spider):
 #         return item
 
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: http://doc.scrapy.org/topics/item-pipeline.html
 import pymongo
 from scrapy.exceptions import DropItem
 from scrapy.conf import settings
@@ -22,8 +19,7 @@ class MongoDBPipeline(object):
     def process_item(self, item, spider):
     	valid = True
         for data in item:
-          # here we only check if the data is not null
-          # but we could do any crazy validation we want
+          # check if the data is not null
        	  if not data:
             valid = False
             raise DropItem("Missing %s of titles from %s" %(data, item['url']))
