@@ -11,7 +11,7 @@ scrapy crawl what.cd
 to run the library scraper, go into the outer **library-crawler** directory and run
 ```bash
 scrapy crawl bobcat
-
+```
 
 after all of the titles have been scraped, run 
 ```bash
