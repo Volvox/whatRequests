@@ -5,7 +5,7 @@
 #
 #     http://doc.scrapy.org/topics/settings.html
 #
-ITEM_PIPELINES = ['libraryCrawler.pipelines.MongoDBPipeline',]
+ITEM_PIPELINES = ['library_crawler.pipelines.MongoDBPipeline',]
 MONGODB_SERVER = "127.0.0.1"
 MONGODB_PORT = 27017
 MONGODB_DB = "whatRequests"
@@ -14,7 +14,7 @@ MONGODB_COLLECTION = "titles"
 BOT_NAME = 'whatRequests'
 BOT_VERSION = '1.0'
 
-SPIDER_MODULES = ['library-crawler.spiders']
-NEWSPIDER_MODULE = 'library-crawler.spiders'
+SPIDER_MODULES = ['library_crawler.spiders']
+NEWSPIDER_MODULE = 'library_crawler.spiders'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
 

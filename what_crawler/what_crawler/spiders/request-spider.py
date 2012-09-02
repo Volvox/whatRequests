@@ -2,7 +2,7 @@ from scrapy.spider import BaseSpider
 from scrapy.http import FormRequest
 from scrapy.http import Request
 from scrapy.selector import HtmlXPathSelector
-from what-crawler.items import WhatItem
+from what_crawler.items import WhatItem
 from scrapy.utils.response import get_base_url 
 import re
 
