@@ -18,5 +18,5 @@ after all of the titles have been scraped, run
 mongo localhost:27017/whatRequests --quiet aggregator.js
 ```
 
-to change the scraper to run on a different library catalog, **library-spider.py** will need to modified.
-changes will need to be made to:** allowed_domains, start_urls ** and the two XPaths, which can be found using the firebug copy XPath feature or using the XPath chrome extension.
+To change the scraper to run on a different library catalog, **library-spider.py** will need to modified.
+Changes will need to be made to allowed_domains, start_urls, and the two XPaths, which can be found using the firebug copy XPath feature or using the XPath chrome extension.
