@@ -49,16 +49,16 @@ class RequestSpider(BaseSpider):
 
             #regular expression for identifying links which incl. bracketed dates.
             p1 = re.compile('\[[^\]]*\]') 
-            p2 = re.compile('\[[2012\]]*\]') 
+            # p2 = re.compile('\[[2012\]]*\]') 
 
             # find links with [date]
             date = p1.search(album) 
 
              # find links with [2012] release date and exclude from results because library will not have new releases
-            d2012 = p2.search(album)
+            # d2012 = p2.search(album)
 
             #store all of the links that are titles and were not released in 2012
-            if date != None and d2012 == None:
+            if date != None:
                 item['name'] = re.sub('\[[^\]]*\]','',album) #get rid of [date]
                 item['name'] = item['name'].strip()
                 items.append(item)
