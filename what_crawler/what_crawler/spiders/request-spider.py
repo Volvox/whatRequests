@@ -46,10 +46,11 @@ class RequestSpider(BaseSpider):
 
         for album in albums:
             item = WhatItem()
-
+            
             #regular expression for identifying links which incl. bracketed dates.
             p1 = re.compile('\[[^\]]*\]') 
             # p2 = re.compile('\[[2012\]]*\]') 
+             
 
             # find links with [date]
             date = p1.search(album) 
@@ -61,6 +62,7 @@ class RequestSpider(BaseSpider):
             if date != None:
                 item['name'] = re.sub('\[[^\]]*\]','',album) #get rid of [date]
                 item['name'] = item['name'].strip()
+                item['name'] = re.escape(item['name'])
                 items.append(item)
            
         
